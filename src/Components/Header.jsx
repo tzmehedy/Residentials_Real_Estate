@@ -1,6 +1,8 @@
 import React from "react";
 
-import bannerImg from '../assets/images/RealEstate_Residance04.png'
+import slider1 from '../assets/images/RealEstate_Residance27.png'
+import slider2 from '../assets/images/RealEstate_Residance28.png'
+import slider3 from '../assets/images/RealEstate_Residance29.png'
 
 import "react-awesome-slider/dist/styles.css";
 
@@ -18,10 +20,58 @@ const Header = () => {
             Explore our curated selection of homes and let us help you find the
             perfect place to call your own.
           </p>
-          <button className="btn mt-2 bg-yellow-500 border-0 md:px-7 md:mt-5 md:py-3">Contact Us</button>
+          <button className="btn mt-2 bg-yellow-500 border-0 md:px-7 md:mt-5 md:py-3">
+            Contact Us
+          </button>
         </div>
-        <div>
-          <img className="w-full h-96" src={bannerImg} alt="" />
+        <div className="w-1/2">
+          {/* Slider start */}
+          <div className="carousel w-full">
+            <div id="slide1" className="carousel-item relative w-full">
+              <img
+                src={slider1}
+                className="w-full"
+              />
+              <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                <a href="#slide4" className="btn btn-circle">
+                  ❮
+                </a>
+                <a href="#slide2" className="btn btn-circle">
+                  ❯
+                </a>
+              </div>
+            </div>
+            <div id="slide2" className="carousel-item relative w-full">
+              <img
+                src={slider2}
+                className="w-full"
+              />
+              <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                <a href="#slide1" className="btn btn-circle">
+                  ❮
+                </a>
+                <a href="#slide3" className="btn btn-circle">
+                  ❯
+                </a>
+              </div>
+            </div>
+            <div id="slide3" className="carousel-item relative w-full">
+              <img
+                src={slider3}
+                className="w-full"
+              />
+              <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                <a href="#slide2" className="btn btn-circle">
+                  ❮
+                </a>
+                <a href="#slide4" className="btn btn-circle">
+                  ❯
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Slider end */}
         </div>
       </div>
 

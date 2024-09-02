@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "estate_title": "Charming Single-Family Home",
+    "segment_name": "Single-Family Homes",
+    "description": "A cozy 3-bedroom home with a spacious backyard, perfect for families.",
+    "price": "$350,000",
+    "status": "sale",
+    "area": "2000 sq ft",
+    "location": "123 Maple Street, Springfield",
+    "facilities": ["Living Room", "Swimming Pool", "Kitchen"],
+    "relevant_image": "https://i.ibb.co/T8mPzvB/single-family-home.jpg"
+  },
+  {
+    "id": "2",
+    "estate_title": "Modern Townhouse in Suburb",
+    "segment_name": "Townhouses",
+    "description": "A contemporary 2-bedroom townhouse with a private patio.",
+    "price": "$1,800/month",
+    "status": "rent",
+    "area": "1500 sq ft",
+    "location": "456 Oak Avenue, Greenfield",
+    "facilities": ["Living Room", "Kitchen"],
+    "relevant_image": "https://i.ibb.co/wNVLDm7/townhouse-malaysia-1-1.jpg"
+  },
+  {
+    "id": "3",
+    "estate_title": "Luxury Downtown Apartment",
+    "segment_name": "Apartments",
+    "description": "A sleek 1-bedroom apartment with city views and modern amenities.",
+    "price": "$2,500/month",
+    "status": "rent",
+    "area": "900 sq ft",
+    "location": "789 Pine Street, Metropolis",
+    "facilities": ["Living Room", "Swimming Pool", "Kitchen"],
+    "relevant_image": "https://i.ibb.co/PGB6pwR/images.jpg"
+  },
+  {
+    "id": "4",
+    "estate_title": "Student Housing Near Campus",
+    "segment_name": "Student Housing",
+    "description": "Affordable and convenient housing options close to campus.",
+    "price": "$700/month",
+    "status": "rent",
+    "area": "500 sq ft",
+    "location": "101 College Lane, University Town",
+    "facilities": ["Living Room", "Kitchen"],
+    "relevant_image": "https://i.ibb.co/tcHb3zX/images-1.jpg"
+  },
+  {
+    "id": "5",
+    "estate_title": "Senior Living Community",
+    "segment_name": "Senior Living Communities",
+    "description": "Comfortable and safe living for seniors, with on-site medical facilities.",
+    "price": "$3,200/month",
+    "status": "rent",
+    "area": "1200 sq ft",
+    "location": "202 Golden Age Road, Serenity Hills",
+    "facilities": ["Living Room", "Swimming Pool", "Kitchen"],
+    "relevant_image": "https://i.ibb.co/v1cfncG/images-2.jpg"
+  },
+  {
+    "id": "6",
+    "estate_title": "Beachfront Vacation Rental",
+    "segment_name": "Vacation Rentals",
+    "description": "A stunning 4-bedroom beachfront property, perfect for a relaxing getaway.",
+    "price": "$5,000/week",
+    "status": "rent",
+    "area": "2500 sq ft",
+    "location": "303 Ocean Drive, Sunny Shores",
+    "facilities": ["Living Room", "Swimming Pool", "Kitchen"],
+    "relevant_image": "https://i.ibb.co/tpLh1DC/vacation-Rentals.jpg"
+  }
+]
