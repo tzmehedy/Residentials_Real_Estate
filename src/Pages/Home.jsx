@@ -11,7 +11,7 @@ import PropertyCard from '../Components/PropertyCard';
 const Home = () => {
     const properties = useLoaderData()
     return (
-      <div>
+      <div className=''>
         <div className="bg-[#175151] bg-cover">
           <NavBar></NavBar>
           <Header></Header>

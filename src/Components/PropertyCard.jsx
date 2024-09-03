@@ -31,7 +31,9 @@ const PropertyCard = ({property}) => {
                 {area}
               </p>
             </div>
-            <button className="btn bg-[#175151] text-white font-bold">View Property</button>
+            <button className="btn bg-[#175151] hover:bg-[#368c8c] text-white font-bold">
+              View Property
+            </button>
           </div>
         </div>
       </div>
