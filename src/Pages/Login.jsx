@@ -2,9 +2,13 @@ import React, { useContext } from 'react';
 import { Form, Link } from 'react-router-dom';
 import NavBar from '../Components/NavBar';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { FcGoogle } from "react-icons/fc";
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-  const {userLogin} = useContext(AuthContext)
+  const { userLogin, userLoginWithGoogle } = useContext(AuthContext);
+
+  const provider = new GoogleAuthProvider();
 
   const handelLogin = (e) => {
     e.preventDefault();
@@ -23,6 +27,16 @@ const Login = () => {
     e.target.email.value = "";
     e.target.password.value = "";
   };
+
+  const handleGoogleLogin = () =>{
+    userLoginWithGoogle(provider)
+    .then(result =>{
+      console.log(result.user)
+    })
+    .catch(error=>{
+      console.log(error.message)
+    })
+  }
     return (
       <div>
         <NavBar></NavBar>
@@ -70,6 +84,12 @@ const Login = () => {
                   </button>
                 </div>
               </Form>
+              <div className="text-center">
+                <button onClick={handleGoogleLogin} className="btn bg-[#175151] px-12 text-white font-bold">
+                  <FcGoogle></FcGoogle>
+                  Login with Google
+                </button>
+              </div>
               <p className="p-4 mb-5">
                 If you are not register, Please{" "}
                 <Link
