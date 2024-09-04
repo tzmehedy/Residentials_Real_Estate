@@ -4,19 +4,18 @@ import { Form, Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
     const {createUser} = useContext(AuthContext)
-
     const [errorMessage, setErrorMessage] = useState()
-    const [success, setSuccessMessage] = useState()
+    const [showPassword, setShowPassword] = useState(false)
 
     const handelCreateUser = (e) =>{
         e.preventDefault()
 
         setErrorMessage('')
-        setSuccessMessage('')
-
+    
         const email = e.target.email.value
         const password = e.target.password.value
 
@@ -37,7 +36,7 @@ const Register = () => {
               toast("Congratulation, You are successfully register")
             })
             .catch((error) => {
-              console.log(error.message);
+              setErrorMessage("Email is already use");
             });
 
         e.target.name.value =''
@@ -102,14 +101,24 @@ const Register = () => {
                     <label className="label">
                       <span className="label-text">Password</span>
                     </label>
-                    <input
-                      type="password"
-                      name="password"
-                      placeholder="password"
-                      className="input input-bordered"
-                      required
-                    />
-                    <p className='text-red-700 font-bold'>{errorMessage}</p>
+
+                    <div className='relative'>
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        name="password"
+                        placeholder="password"
+                        className="input input-bordered w-full "
+                        required
+                      />
+                      <span
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute mt-3 -ml-6"
+                      >
+                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                      </span>
+                    </div>
+
+                    <p className="text-red-700 font-bold">{errorMessage}</p>
                   </div>
                   <div className="form-control mt-6">
                     <button className="btn bg-[#175151] text-white font-bold">
@@ -119,7 +128,10 @@ const Register = () => {
                 </Form>
                 <p className="p-4 mb-5">
                   Already have an account, Please{" "}
-                  <Link to={'/login'} className="text-emerald-700 font-bold underline">
+                  <Link
+                    to={"/login"}
+                    className="text-emerald-700 font-bold underline"
+                  >
                     Login
                   </Link>
                 </p>

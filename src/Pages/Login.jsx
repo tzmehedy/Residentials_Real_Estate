@@ -1,26 +1,32 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Form, Link } from "react-router-dom";
 import NavBar from "../Components/NavBar";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { userLogin, userLoginWithGoogle, userLoginWithGithub } =
     useContext(AuthContext);
+  
+  const [errorMessage, setErrorMessage] = useState()
 
   const handelLogin = (e) => {
     e.preventDefault();
+
+    setErrorMessage('')
 
     const email = e.target.email.value;
     const password = e.target.password.value;
 
     userLogin(email, password)
       .then((result) => {
-        console.log(result.user);
+        toast("Successfully Login")
       })
       .catch((error) => {
-        console.log(error.message);
+        setErrorMessage("Email & Password aren't valid")
       });
 
     e.target.email.value = "";
@@ -30,7 +36,7 @@ const Login = () => {
   const handleGoogleLogin = () => {
     userLoginWithGoogle()
       .then((result) => {
-        console.log(result.user);
+        toast("Successfully Login");
       })
       .catch((error) => {
         console.log(error.message);
@@ -40,7 +46,7 @@ const Login = () => {
   const handelGithubLogin = () => {
     userLoginWithGithub()
       .then((result) => {
-        console.log(result.user);
+        toast("Successfully Login");
       })
       .catch((error) => {
         console.log(error.message);
@@ -90,6 +96,7 @@ const Login = () => {
                   Login
                 </button>
               </div>
+              <p className="text-red-700">{errorMessage}</p>
             </Form>
             <div className="text-center">
               <button
