@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import logo from '../../public/RealEstate_Residance01.png'
+import { AuthContext } from '../AuthProvider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const NavBar = () => {
+
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user)
 
     const navLinks = (
       <>
@@ -27,6 +32,20 @@ const NavBar = () => {
         </li>
       </>
     );
+    const handelLogout = () =>{
+      logOut()
+      .then(result=>{
+        toast("Log Out Successfully")
+      })
+      .catch(error=>{
+        console.log(error.message)
+      })
+
+    }
+
+
+
+
     return (
       <div className="navbar bg-[#175151]">
         <div className="navbar-start flex items-center">
@@ -64,16 +83,27 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-5">
-          <Link to={"/login"}>
-            <button className="btn bg-yellow-300 border-none px-6 py-2 text-[#175151] font-bold">
-              Login
-            </button>
-          </Link>
-          <Link>
-            <button className="btn  bg-yellow-300 border-none px-6 py-2 text-[#175151] font-bold">
-              Logout
-            </button>
-          </Link>
+          {user ? (
+            <>
+              <div>
+                <img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" />
+              </div>
+              <Link>
+                <button
+                  onClick={handelLogout}
+                  className="btn  bg-yellow-300 border-none px-6 py-2 text-[#175151] font-bold"
+                >
+                  Logout
+                </button>
+              </Link>
+            </>
+          ) : (
+            <Link to={"/login"}>
+              <button className="btn bg-yellow-300 border-none px-6 py-2 text-[#175151] font-bold">
+                Login
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     );
