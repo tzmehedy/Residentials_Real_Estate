@@ -1,24 +1,44 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import NavBar from '../Components/NavBar';
 import { Form, Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
     const {createUser} = useContext(AuthContext)
 
+    const [errorMessage, setErrorMessage] = useState()
+    const [success, setSuccessMessage] = useState()
+
     const handelCreateUser = (e) =>{
         e.preventDefault()
+
+        setErrorMessage('')
+        setSuccessMessage('')
 
         const email = e.target.email.value
         const password = e.target.password.value
 
-        createUser(email,password)
-        .then (result =>{
-            console.log(result.user)
-        })
-        .catch(error=>{
-            console.log(error.message)
-        })
+        if (!/[A-Z]/.test(password)){
+          setErrorMessage("Password must have a upper case character")
+          return
+        }
+        else if(!/[a-z]/.test(password)){
+          setErrorMessage("Password must have a lower case character")
+          return
+        }
+        else if(password.length < 6){
+          setErrorMessage("Password should be at least 6 character")
+          return 
+        }
+          createUser(email, password)
+            .then((result) => {
+              toast("Congratulation, You are successfully register")
+            })
+            .catch((error) => {
+              console.log(error.message);
+            });
 
         e.target.name.value =''
         e.target.photoUrl.value =''
@@ -89,6 +109,7 @@ const Register = () => {
                       className="input input-bordered"
                       required
                     />
+                    <p className='text-red-700 font-bold'>{errorMessage}</p>
                   </div>
                   <div className="form-control mt-6">
                     <button className="btn bg-[#175151] text-white font-bold">

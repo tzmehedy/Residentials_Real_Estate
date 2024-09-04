@@ -5,17 +5,18 @@ import slider2 from '../assets/images/RealEstate_Residance28.png'
 import slider3 from '../assets/images/RealEstate_Residance29.png'
 
 import "react-awesome-slider/dist/styles.css";
+import "animate.css";
 
 const Header = () => {
   return (
     <div className="pb-10">
       <div className="flex flex-col-reverse md:flex-row justify-between p-10 items-center">
         <div className="text-white md:w-1/2">
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-5xl font-bold animate__animated animate__fadeInDown">
             YOUR <br /> TRUSTED <br />{" "}
             <span className="text-yellow-300">REAL ESTATE</span> <br /> PARTNER
           </h1>
-          <p className="md: mt-2">
+          <p className="md: mt-2 animate__animated animate__backInLeft">
             At Estate Rise, we turn your homeownership dreams into reality.
             Explore our curated selection of homes and let us help you find the
             perfect place to call your own.
@@ -28,10 +29,7 @@ const Header = () => {
           {/* Slider start */}
           <div className="carousel w-full">
             <div id="slide1" className="carousel-item relative w-full">
-              <img
-                src={slider1}
-                className="w-full"
-              />
+              <img src={slider1} className="w-full" />
               <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                 <a href="#slide4" className="btn btn-circle">
                   ❮
@@ -42,10 +40,7 @@ const Header = () => {
               </div>
             </div>
             <div id="slide2" className="carousel-item relative w-full">
-              <img
-                src={slider2}
-                className="w-full"
-              />
+              <img src={slider2} className="w-full" />
               <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                 <a href="#slide1" className="btn btn-circle">
                   ❮
@@ -56,10 +51,7 @@ const Header = () => {
               </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full">
-              <img
-                src={slider3}
-                className="w-full"
-              />
+              <img src={slider3} className="w-full" />
               <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                 <a href="#slide2" className="btn btn-circle">
                   ❮
