@@ -67,7 +67,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg flex flex-col md:flex-row justify-center items-center p-2 m-2 space-y-2 md:p-3 md:m-3 md:gap-8">
+      <div className="bg-white rounded-lg flex flex-col md:flex-row justify-center items-center md:p-3 md:m-3 md:gap-8">
         <div>
           <h1 className="font-bold">Categories</h1>
           <input

@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 
 const PropertyCard = ({property}) => {
@@ -10,6 +11,7 @@ const PropertyCard = ({property}) => {
       location,
       price,
       area,
+      id
     } = property;
     return (
       <div>
@@ -31,9 +33,12 @@ const PropertyCard = ({property}) => {
                 {area}
               </p>
             </div>
-            <button className="btn bg-[#175151] hover:bg-[#368c8c] text-white font-bold">
+            <Link
+              to={`/properties/${id}`}
+              className="btn bg-[#175151] hover:bg-[#368c8c] text-white font-bold"
+            >
               View Property
-            </button>
+            </Link>
           </div>
         </div>
       </div>

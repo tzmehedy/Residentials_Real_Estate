@@ -86,7 +86,12 @@ const NavBar = () => {
           {user ? (
             <>
               <div>
-                <img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" />
+                <img
+                  title={user.displayName}
+                  className="w-10 h-10 rounded-full "
+                  src={user.photoURL}
+                  alt=""
+                />
               </div>
               <Link>
                 <button
