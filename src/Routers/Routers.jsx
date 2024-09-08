@@ -6,11 +6,14 @@ import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import PropertyDetails from '../Pages/PropertyDetails';
 import PrivateRouter from './PrivateRouter';
+import ErrorPage from '../Pages/ErrorPage';
+import Blogs from '../Pages/Blogs';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -24,6 +27,12 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
+        
+
       },
       {
         path: "/properties/:id",

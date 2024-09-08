@@ -25,7 +25,7 @@ const Header = () => {
             Contact Us
           </button>
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 animate__animated animate__backInRight">
           {/* Slider start */}
           <div className="carousel w-full">
             <div id="slide1" className="carousel-item relative w-full">

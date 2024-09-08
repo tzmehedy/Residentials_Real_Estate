@@ -10,7 +10,7 @@ const PropertyDetails = () => {
     return (
       <div>
         <NavBar></NavBar>
-        <div className="container mx-auto flex flex-col justify-center items-center mt-10">
+        <div className="container mx-auto flex flex-col justify-center items-center my-10">
           <div>
             <img src={property.relevant_image} className="w-full h-48" alt="" />
           </div>
