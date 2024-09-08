@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ErrorPage = () => {
+    
     return (
         <div className='flex flex-col justify-center items-center text-black'>
             <h1>Oops!!!</h1>

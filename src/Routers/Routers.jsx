@@ -8,6 +8,8 @@ import PropertyDetails from '../Pages/PropertyDetails';
 import PrivateRouter from './PrivateRouter';
 import ErrorPage from '../Pages/ErrorPage';
 import Blogs from '../Pages/Blogs';
+import Profile from '../Pages/Profile';
+import EditProfile from '../Pages/EditProfile';
 
 const router = createBrowserRouter([
   {
@@ -31,8 +33,6 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs></Blogs>,
-        
-
       },
       {
         path: "/properties/:id",
@@ -41,7 +41,22 @@ const router = createBrowserRouter([
             <PropertyDetails></PropertyDetails>
           </PrivateRouter>
         ),
-        loader: ()=>fetch('/properties.json')
+        loader: () => fetch("/properties.json"),
+      },
+
+      {
+        path: "/profile",
+        element: (
+          <PrivateRouter>
+            <Profile></Profile>
+          </PrivateRouter>
+        ),
+        children: [],
+      },
+
+      {
+        path: "/editProfile",
+        element: <EditProfile></EditProfile>,
       },
     ],
   },
