@@ -7,6 +7,7 @@ import propertyTypes2 from '../assets/images/RealEstate_Residance06.png'
 import propertyTypes3 from '../assets/images/RealEstate_Residance07.png'
 import { useLoaderData } from 'react-router-dom';
 import PropertyCard from '../Components/PropertyCard';
+import AboutOurAgent from '../Components/AboutOurAgent';
 
 const Home = () => {
     const properties = useLoaderData()
@@ -83,6 +84,11 @@ const Home = () => {
             ))}
           </div>
         </div>
+
+
+        {/* About our agent */}
+
+        <AboutOurAgent></AboutOurAgent>
       </div>
     );
 };

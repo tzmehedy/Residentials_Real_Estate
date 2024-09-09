@@ -7,9 +7,10 @@ import Register from '../Pages/Register';
 import PropertyDetails from '../Pages/PropertyDetails';
 import PrivateRouter from './PrivateRouter';
 import ErrorPage from '../Pages/ErrorPage';
-import Blogs from '../Pages/Blogs';
+
 import Profile from '../Pages/Profile';
 import EditProfile from '../Pages/EditProfile';
+import Services from '../Pages/Services';
 
 const router = createBrowserRouter([
   {
@@ -31,10 +32,6 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/blogs",
-        element: <Blogs></Blogs>,
-      },
-      {
         path: "/properties/:id",
         element: (
           <PrivateRouter>
@@ -53,10 +50,17 @@ const router = createBrowserRouter([
         ),
         children: [],
       },
-
       {
         path: "/editProfile",
         element: <EditProfile></EditProfile>,
+      },
+      {
+        path: "/service",
+        element: (
+          <PrivateRouter>
+            <Services></Services>
+          </PrivateRouter>
+        ),
       },
     ],
   },

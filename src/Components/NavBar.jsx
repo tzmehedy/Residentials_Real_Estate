@@ -18,17 +18,15 @@ const NavBar = () => {
         <NavLink to={"/properties"}>Properties</NavLink>
       </li>
       <li>
-        <NavLink to={"/blogs"}>Blog</NavLink>
+        <NavLink to={"/service"}>Services</NavLink>
       </li>
       <li>
         <NavLink to={"/about"}>About</NavLink>
       </li>
       <li>
-        <NavLink to={"/faq"}>FAQ</NavLink>
-      </li>
-      <li>
         <NavLink to={"/contact"}>Contact Us</NavLink>
       </li>
+
       {user ? (
         <li>
           <NavLink to={"/profile"}>Profile</NavLink>
